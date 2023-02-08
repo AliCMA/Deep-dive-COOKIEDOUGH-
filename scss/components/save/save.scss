@@ -11,4 +11,13 @@
     width: 20rem;
     transform: translateY(2.5rem);
     border-radius: 0.5rem;
+    transition: 0.2s all;
+    border: 0.5rem solid map-get(colors.$cookie, "spots");
+
+    &:hover{
+        background: whitesmoke;
+        color:  map-get(colors.$cookie, "spots");
+        cursor: pointer;
+    }
 }
+
