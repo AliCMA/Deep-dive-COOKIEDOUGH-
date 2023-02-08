@@ -25,6 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .buttonAndAvatarWrapper {
@@ -152,7 +153,15 @@ body {
 
 .score {
   font-size: 500%;
-  color: black;
+  color: #483434;
+  background: whitesmoke;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-weight: 300;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cookie {
@@ -164,6 +173,13 @@ body {
   position: relative;
   overflow: hidden;
   border: 1rem solid #483434;
+  transition: 0.2s all;
+}
+.cookie:hover {
+  cursor: pointer;
+}
+.cookie:active {
+  transform: scale(0.95);
 }
 .cookie__spots {
   width: 7rem;

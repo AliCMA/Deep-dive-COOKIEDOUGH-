@@ -12,6 +12,16 @@
     position: relative;
     overflow: hidden;
     border: 1rem solid map-get(colors.$cookie,"spots");
+    transition: 0.2s all;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &:active{
+       transform: scale(0.95);
+    }
+
 
     &__spots{
         width: 7rem;
