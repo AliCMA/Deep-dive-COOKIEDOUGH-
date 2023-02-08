@@ -12,4 +12,57 @@ body {
   font-size: 2rem;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #B7CADB, #54BAB9);
+}
+
+.cookie {
+  width: 40rem;
+  background: #C19277;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+  border: 1rem solid #483434;
+}
+.cookie__spots {
+  width: 7rem;
+  aspect-ratio: 1/1;
+  background: #483434;
+  border-radius: 45%;
+  position: absolute;
+}
+.cookie__spots--first {
+  top: 10%;
+  left: 5%;
+}
+.cookie__spots--second {
+  right: 25%;
+  top: 1%;
+}
+.cookie__spots--third {
+  right: 5%;
+  bottom: 10%;
+}
+.cookie__spots--fourth {
+  left: 5%;
+  bottom: 10%;
+}
+.cookie__spots--fifth {
+  top: 25%;
+  left: 30%;
+}
+.cookie__spots--sixth {
+  top: 28%;
+  left: 67%;
+}
+.cookie__spots--seventh {
+  top: 65%;
+  left: 38%;
+}
+
 /*# sourceMappingURL=style.css.map */
