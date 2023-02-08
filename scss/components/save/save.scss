@@ -1,0 +1,16 @@
+.buttonWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.save{
+    font-size: 100%;
+    height: min-content;
+    padding: 2rem;
+    background: #645CBB;
+    color: whitesmoke;
+    border: none;
+    width: 20rem;
+}
