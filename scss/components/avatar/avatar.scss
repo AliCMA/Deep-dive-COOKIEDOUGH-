@@ -1,12 +1,33 @@
-.avatarWrapper{
-    width: 100%;
-    display: flex;
-    
-}
+@use "../../abstracts/colors";
 
 .avatar{
     width: 10rem;
     height: 10rem;
-    background: whitesmoke;
+    background: map-get(colors.$cookie, "background");
     border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 0.6rem solid map-get(colors.$cookie, "spots");
+
+    &__head{
+        width: 70%;
+        height: 50%;
+        background: map-get(colors.$cookie, "spots");
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__body{
+        width: 60%;
+        height: 60%;
+        background: map-get(colors.$cookie, "spots");
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 100%;
+    }
 }
