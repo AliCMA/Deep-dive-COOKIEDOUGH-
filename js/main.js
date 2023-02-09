@@ -82,6 +82,7 @@ class Autoscore{
     onAutoScoreClicked = () => {
         if(this.bought === false){
             this.bought = true;
+            this.score.subtractScore();
             this.score.onAutoScoreClicked();
         }
     }
