@@ -13,6 +13,10 @@ class Cookie{
     onCookieClicked = () =>{
         this.score.onCookieClicked(this.factor);
     }
+
+    onStyleChange(){
+        console.log("Ik moet veranderen!");
+    }
 }
 
 class Score{
@@ -88,8 +92,29 @@ class Autoscore{
     }
 }
 
+class ChocolateCookie{
+    htmlElement;
+    bought = false;
+    cookie = undefined;
+
+    constructor(htmlElement, cookie){
+        this.htmlElement = htmlElement;
+        this.cookie = cookie;
+        this.htmlElement.onclick = this.onChocolateCookieClicked;
+    }
+
+    onAutoScoreClicked = () => {
+        if(this.bought === false){
+            this.bought = true;
+            this.cookie.onStyleChange();
+        }
+    }
+
+
+}
+
 const score = new Score(555, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
 const jeroen = new Multiplier(document.getElementById("js--multiplier"), cookie);
 const auto = new Autoscore(document.getElementById("js--autoScore"),score);
-console.log(auto.score);
+const chocolate = new ChocolateCookie(document.getElementById("js--chocolate"), cookie);
