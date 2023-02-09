@@ -9,25 +9,29 @@ class Cookie{
         this.score = newScore;
     }
 
-    onCookieClicked(){
-        console.log("geklikt!");
+    onCookieClicked = () =>{
+        this.score.onCookieClicked();
     }
 }
 
 class Score{
-    defaultScore = 10000;
+    score;
     name = "";
     htmlElement = undefined;
 
-    constructor(newDefaultScore, newName, newHTMLElement){
-        this.defaultScore = newDefaultScore;
+    constructor(newScore, newName, newHTMLElement){
+        this.score = newScore;
         this.name = newName;
         this.htmlElement = newHTMLElement;
-        this.htmlElement.innerText = newDefaultScore;
+        this.htmlElement.innerText = newScore;
+    }
+
+    onCookieClicked(){
+        this.score = this.score + 1;
+        this.htmlElement.innerText = this.score;
     }
 }
 
-const score = new Score(0, "Default Score", document.getElementById("js--score"));
+const score = new Score(100, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
-cookie.score.htmlElement.style.background = "red";
 
