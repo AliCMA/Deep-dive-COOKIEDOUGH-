@@ -36,6 +36,13 @@ class Score{
         this.score = this.score - 100;
         this.htmlElement.innerText = this.score;
     }
+
+    onAutoScoreClicked(){
+        setInterval( () => {
+            this.score = this.score + 500;
+            this.htmlElement.innerText = this.score;
+        }, 10000) 
+    }
 }
 
 class Multiplier{
@@ -61,6 +68,23 @@ class Multiplier{
     }
 }
 
-const score = new Score(100, "Default Score", document.getElementById("js--score"));
+class Autoscore{
+    htmlElement = undefined;
+    score = undefined;
+
+    constructor(htmlElement, score){
+        this.htmlElement = htmlElement;
+        this.score = score; 
+        this.htmlElement.onclick = this.onAutoScoreClicked;
+    }
+
+    onAutoScoreClicked = () => {
+        score.onAutoScoreClicked();
+    }
+}
+
+const score = new Score(555, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
 const jeroen = new Multiplier(document.getElementById("js--multiplier"), cookie);
+const auto = new Autoscore(document.getElementById("js--autoScore"),score);
+console.log(auto.score);
