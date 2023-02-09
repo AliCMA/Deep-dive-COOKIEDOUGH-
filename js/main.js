@@ -119,8 +119,16 @@ class ChocolateCookie{
 
 }
 
+
+
 const score = new Score(555, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
+
+
 const multiplier = new Multiplier(document.getElementById("js--multiplier"), cookie);
 const auto = new Autoscore(document.getElementById("js--autoScore"),score);
 const chocolate = new ChocolateCookie(document.getElementById("js--chocolate"), cookie);
+
+const multiplierMobile = new Multiplier(document.getElementById("js--multiplier--mobile"),cookie);
+const autoMobile = new Autoscore(document.getElementById("js--autoScore--mobile"),score);
+const chocolateMobile = new ChocolateCookie(document.getElementById("js--chocolate--mobile"), cookie);
