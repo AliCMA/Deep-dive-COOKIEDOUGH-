@@ -15,7 +15,7 @@ class Cookie{
     }
 
     onStyleChange(){
-        console.log("Ik moet veranderen!");
+        this.htmlElement.classList.add("cookie--chocolate");
     }
 }
 
@@ -46,6 +46,11 @@ class Score{
             this.score = this.score + 500;
             this.htmlElement.innerText = this.score;
         }, 10000) 
+    }
+
+    addPoints(){
+        this.score = this.score + 10000;
+        this.htmlElement.innerText = this.score;
     }
 }
 
@@ -107,6 +112,7 @@ class ChocolateCookie{
         if(this.bought === false){
             this.bought = true;
             this.cookie.onStyleChange();
+            this.cookie.score.addPoints();
         }
     }
 
@@ -115,6 +121,6 @@ class ChocolateCookie{
 
 const score = new Score(555, "Default Score", document.getElementById("js--score"));
 const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"), score);
-const jeroen = new Multiplier(document.getElementById("js--multiplier"), cookie);
+const multiplier = new Multiplier(document.getElementById("js--multiplier"), cookie);
 const auto = new Autoscore(document.getElementById("js--autoScore"),score);
 const chocolate = new ChocolateCookie(document.getElementById("js--chocolate"), cookie);
