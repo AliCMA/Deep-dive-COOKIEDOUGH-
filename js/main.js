@@ -71,6 +71,7 @@ class Multiplier{
 class Autoscore{
     htmlElement = undefined;
     score = undefined;
+    bought = false;
 
     constructor(htmlElement, score){
         this.htmlElement = htmlElement;
@@ -79,7 +80,10 @@ class Autoscore{
     }
 
     onAutoScoreClicked = () => {
-        score.onAutoScoreClicked();
+        if(this.bought === false){
+            this.bought = true;
+            this.score.onAutoScoreClicked();
+        }
     }
 }
 
