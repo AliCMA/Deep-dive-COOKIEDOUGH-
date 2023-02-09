@@ -17,6 +17,12 @@ class Cookie{
     onStyleChange(){
         this.htmlElement.classList.add("cookie--chocolate");
     }
+
+    onStyleChange(){
+        this.htmlElement.classList.add("cookie--redvelvet");
+    }
+
+    
 }
 
 class Score{
@@ -119,6 +125,28 @@ class ChocolateCookie{
 
 }
 
+class redvelvetCookie{
+    htmlElement;
+    bought = false;
+    cookie = undefined;
+
+    constructor(htmlElement, cookie){
+        this.htmlElement = htmlElement;
+        this.cookie = cookie;
+        this.htmlElement.onclick = this.onredvelvetCookieClicked;
+    }
+
+    onAutoScoreClicked = () => {
+        if(this.bought === false){
+            this.bought = true;
+            this.cookie.onStyleChange();
+            this.cookie.score.addPoints();
+        }
+    }
+
+
+}
+
 
 
 const score = new Score(555, "Default Score", document.getElementById("js--score"));
@@ -128,7 +156,11 @@ const cookie = new Cookie("Default Cookie", document.getElementById("js--cookie"
 const multiplier = new Multiplier(document.getElementById("js--multiplier"), cookie);
 const auto = new Autoscore(document.getElementById("js--autoScore"),score);
 const chocolate = new ChocolateCookie(document.getElementById("js--chocolate"), cookie);
+const redvelvet = new redvelvetCookie(document.getElementById("js--redvelvet"), cookie);
 
 const multiplierMobile = new Multiplier(document.getElementById("js--multiplier--mobile"),cookie);
 const autoMobile = new Autoscore(document.getElementById("js--autoScore--mobile"),score);
-const chocolateMobile = new ChocolateCookie(document.getElementById("js--chocolate--mobile"), cookie);
+const redvelvetMobile = new redvelvetCookie(document.getElementById("js--redvelvet--mobile"), cookie);
+
+
+
