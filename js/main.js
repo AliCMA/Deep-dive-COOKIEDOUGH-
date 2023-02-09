@@ -1,15 +1,17 @@
 class Cookie{
     name = "";
-    constructor(newName){
+    htmlElement = undefined;
+    constructor(newName, newHTMLElement){
         this.name = newName;
+        this.htmlElement = newHTMLElement;
+        this.htmlElement.onclick = this.onCookieClicked;
+    }
+
+    onCookieClicked(){
+        console.log("geklikt!");
     }
 }
 
-const test = new Cookie("Jeroen");
-console.log(test);
+const cookie = new Cookie("Default", document.getElementById("js--cookie"));
 
-const tes2 = new Cookie("Ali1");
-console.log(test2);
 
-const test3 = new Cookie("Ali2");
-console.log(test3);
