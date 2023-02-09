@@ -2,6 +2,7 @@ class Cookie{
     name = "";
     htmlElement = undefined;
     score = undefined;
+    factor = 1;
     constructor(newName, newHTMLElement,newScore){
         this.name = newName;
         this.htmlElement = newHTMLElement;
@@ -10,7 +11,7 @@ class Cookie{
     }
 
     onCookieClicked = () =>{
-        this.score.onCookieClicked();
+        this.score.onCookieClicked(this.factor);
     }
 }
 
@@ -26,8 +27,8 @@ class Score{
         this.htmlElement.innerText = newScore;
     }
 
-    onCookieClicked(){
-        this.score = this.score + 1;
+    onCookieClicked(factorFromCookie){
+        this.score = this.score + factorFromCookie;
         this.htmlElement.innerText = this.score;
     }
 
@@ -41,15 +42,22 @@ class Multiplier{
     factor = 100;
     htmlElement = undefined;    
     cookie = undefined;
+    bought = false;
 
-    constructor(htmlElement){
+    constructor(htmlElement, cookie){
         this.htmlElement = htmlElement;
         this.cookie = cookie;
         this.htmlElement.onclick = this.onMultiplierClicked;
     }
 
     onMultiplierClicked = () => {
-    this.cookie.score.subtractScore();
+      if(this.bought === false){
+        this.bought = true;
+            // Weg halen 100 punten van de score
+            this.cookie.score.subtractScore();
+            this.cookie.factor - this.factor;
+        } 
+
     }
 }
 
