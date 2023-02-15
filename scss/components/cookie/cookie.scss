@@ -35,16 +35,16 @@
     }
 
     &--redvelvet{
-        background: #3C2A21;
+        background: red;
         box-shadow: 0 2rem 1.5rem 0rem rgba(0,0,0.2);
         border: 1rem solid #1C0A00;
         
     }
 
     &--redvelvet &__spots{
-        background: #1C0A00;
+        background: white;
         border-radius: 20%;
-    }
+    }   
 
 
    

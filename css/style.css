@@ -215,6 +215,15 @@ body {
   background: #1C0A00;
   border-radius: 20%;
 }
+.cookie--redvelvet {
+  background: red;
+  box-shadow: 0 2rem 1.5rem 0rem rgb(0, 0, 0);
+  border: 1rem solid #1C0A00;
+}
+.cookie--redvelvet .cookie__spots {
+  background: white;
+  border-radius: 20%;
+}
 .cookie__spots {
   width: 5rem;
   aspect-ratio: 1/1;

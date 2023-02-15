@@ -18,7 +18,7 @@ class Cookie{
         this.htmlElement.classList.add("cookie--chocolate");
     }
 
-    onStyleChange(){
+    onStyleChange2(){
         this.htmlElement.classList.add("cookie--redvelvet");
     }
 
@@ -77,7 +77,7 @@ class Multiplier{
         this.bought = true;
             // Weg halen 100 punten van de score
             this.cookie.score.subtractScore();
-            this.cookie.factor - this.factor;
+            this.cookie.factor = this.factor;
         } 
 
     }
@@ -114,7 +114,7 @@ class ChocolateCookie{
         this.htmlElement.onclick = this.onChocolateCookieClicked;
     }
 
-    onAutoScoreClicked = () => {
+    onChocolateCookieClicked = () => {
         if(this.bought === false){
             this.bought = true;
             this.cookie.onStyleChange();
@@ -136,17 +136,16 @@ class redvelvetCookie{
         this.htmlElement.onclick = this.onredvelvetCookieClicked;
     }
 
-    onAutoScoreClicked = () => {
+    onredvelvetCookieClicked = () => {
         if(this.bought === false){
             this.bought = true;
-            this.cookie.onStyleChange();
+            this.cookie.onStyleChange2();
             this.cookie.score.addPoints();
         }
     }
 
 
 }
-
 
 
 const score = new Score(555, "Default Score", document.getElementById("js--score"));
